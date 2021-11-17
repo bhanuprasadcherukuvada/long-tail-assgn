@@ -1,0 +1,32 @@
+.container{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	align-items: center;
+	margin-top: 50px;	
+}
+
+.title{
+	font-weight: 600;
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+
+.description{
+	font-weight: 300;
+	font-size: 20px;
+	overflow-wrap: break-word;
+}
+
+.button{
+	background-color: whitesmoke;
+	border:none;
+	border-radius: 5px;
+	position: absolute;
+	left:10px;
+	top:10px;
+	font-size: 20px;
+	padding: 5px;
+	margin: 10px;
+
+}

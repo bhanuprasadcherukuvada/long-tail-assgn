@@ -1,0 +1,28 @@
+.container{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listStyle{
+  margin-top: 10px;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+  text-align: center;
+}
+
+.heading{
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.listStyle:hover{
+  color: blue;
+}
+
+.listStyle:first-child{
+  margin-top: 0px;
+}
