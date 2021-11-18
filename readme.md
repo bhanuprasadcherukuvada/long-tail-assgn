@@ -22,7 +22,7 @@
 
 
  ### Adding remote Schema
-   - I have used 2nd use case in the given (blog)[https://hasura.io/blog/remote-joins-a-graphql-api-to-join-database-and-other-data-sources/]. 
+   - I have used 2nd use case in the given [blog](https://hasura.io/blog/remote-joins-a-graphql-api-to-join-database-and-other-data-sources/). 
    - Run   `hasura metadata apply` to update the metadata which includes config regarding remote schema after adding remote schema using hasura console.
 
 
@@ -42,12 +42,13 @@
 ### Link to the deployement
    - (https://long-tail-assgn.vercel.app/)[https://long-tail-assgn.vercel.app/]
 
-   - For the purpose of deployement, I used (vercel)[https://vercel.com] platform for deploying nextjs 
-   - For hasura graphql engine,I used (hasura cloud)[https://hasura.io/cloud/]
-   - For remote Schema I deployed it on (glitch)[https://glitch.com]
+   - For the purpose of deployement, I used [vercel](https://vercel.com) platform for deploying nextjs 
+   - For hasura graphql engine,I used [hasura cloud](https://hasura.io/cloud/)
+   - For remote Schema I deployed it on [glitch](https://glitch.com)
+  
 
 
-   ##### Alternative deployement
+### Alternative deployement
    - we can use ECS service for deploying the docker compose services directly
 
 
