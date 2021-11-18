@@ -27,6 +27,7 @@ services:
       ## enable debugging mode. It is recommended to disable this in production
       HASURA_GRAPHQL_DEV_MODE: "true"
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
+      REMOTE_ENDPOINT: http://backend:5000
       ## uncomment next line to set an admin secret
       # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
   frontend:
@@ -35,6 +36,13 @@ services:
       - 3000:3000
     env_file:
       - './client/docker.env'
+    depends_on:
+      - graphql-engine
+  
+  backend:
+    build: './backend'
+    ports:
+      - 5000:5000
     depends_on:
       - graphql-engine
 volumes:

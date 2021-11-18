@@ -2,7 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
-export default function Home({ long_tails }) {
+export default function Home({ long_tails, error }) {
+	if (error) {
+		return <h1>{ error.message}</h1>
+	}
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -32,27 +35,40 @@ export default function Home({ long_tails }) {
 }
 
 
-export async function getServerSideProps({params}) {
-	const res = await fetch(process.env.GRAPHQL_URL, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			query: `query ListAllTails {
+export async function getServerSideProps({ params }) {
+	console.log(process.env.GRAPHQL_URL);
+	try {
+		const res = await fetch(process.env.GRAPHQL_URL, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				query: `query ListAllTails {
   								long_tails {
     									tail
     									json_id
   								}
 					    }
       `,
-		}),
-	});
+			}),
+		});
 
-	const result = await res.json();
-	const {
-		data: { long_tails },
-	} = result;
+		const result = await res.json();
+		const {
+			data: { long_tails },
+		} = result;
+	}
+	catch (err) {
+		console.log(err);
+		return {
+			props: {
+				error: {
+					message: " some error occured while fetching tails",
+				}
+			}
+		}
+	}
 
 	return {
 		props: {

@@ -1,1 +1,6 @@
-[]
+- name: localSchema
+  definition:
+    url_from_env: REMOTE_ENDPOINT
+    timeout_seconds: 60
+    forward_client_headers: true
+  comment: ""

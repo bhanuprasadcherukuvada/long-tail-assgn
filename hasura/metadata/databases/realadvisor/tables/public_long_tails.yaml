@@ -1,3 +1,13 @@
 table:
   name: long_tails
   schema: public
+remote_relationships:
+- definition:
+    hasura_fields:
+    - json_id
+    remote_field:
+      post_info:
+        arguments:
+          json_id: $json_id
+    remote_schema: localSchema
+  name: post
