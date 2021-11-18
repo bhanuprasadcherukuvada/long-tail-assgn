@@ -42,6 +42,7 @@ export async function getServerSideProps({ params }) {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
+				'x-hasura-admin-secret': process.env.SECRET_KEY,
 			},
 			body: JSON.stringify({
 				query: `query ListAllTails {
@@ -54,10 +55,19 @@ export async function getServerSideProps({ params }) {
 			}),
 		});
 
+
+
 		const result = await res.json();
+		
 		const {
 			data: { long_tails },
 		} = result;
+
+		return {
+			props: {
+				long_tails,
+			},
+		};
 	}
 	catch (err) {
 		console.log(err);
@@ -70,9 +80,5 @@ export async function getServerSideProps({ params }) {
 		}
 	}
 
-	return {
-		props: {
-			long_tails,
-		},
-	};
+	
 }

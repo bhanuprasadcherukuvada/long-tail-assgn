@@ -25,13 +25,17 @@ export async function getServerSideProps({ params }) {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
+			"x-hasura-admin-secret": process.env.SECRET_KEY,
 		},
 		body: JSON.stringify({
-			query: `query fetchID($tail:String!=""){
-				long_tails_by_pk(tail: $tail) {
-    						json_id
-  							}
-			}`,
+			query: `query MyQuery($tail: String = "") {
+						long_tails_by_pk(tail: $tail) {
+							post {
+							description
+							title
+							}
+						}
+					}`,
 			variables: {
 				tail: params.tail,
 			},
@@ -41,24 +45,14 @@ export async function getServerSideProps({ params }) {
 	const result = await res.json();
 	const {
 		data: {
-			long_tails_by_pk: { json_id },
+			long_tails_by_pk: { post:{title,description}},
 		},
 	} = result;
 
-	const posts = data.filter(item => item.id === json_id);
-	if (!posts) {
-		return {
-			props: {
-				title: "",
-				description:"",
-			}
-		}
-	}
-
 	return {
 		props: {
-			title: posts[0].title,
-			description: posts[0].description
+			title,
+			description
 		},
 	};
 }
