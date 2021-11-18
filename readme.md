@@ -40,7 +40,7 @@
 
 
 ### Link to the deployement
-   - (https://long-tail-assgn.vercel.app/)[https://long-tail-assgn.vercel.app/]
+   - [https://long-tail-assgn.vercel.app/](https://long-tail-assgn.vercel.app/)
 
    - For the purpose of deployement, I used [vercel](https://vercel.com) platform for deploying nextjs 
    - For hasura graphql engine,I used [hasura cloud](https://hasura.io/cloud/)
