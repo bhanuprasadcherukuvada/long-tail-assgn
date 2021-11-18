@@ -40,7 +40,7 @@
 
 
 ### Link to the deployement
-   - (nextapp)[https://long-tail-assgn.vercel.app/]
+   - (https://long-tail-assgn.vercel.app/)[https://long-tail-assgn.vercel.app/]
 
    - For the purpose of deployement, I used (vercel)[https://vercel.com] platform for deploying nextjs 
    - For hasura graphql engine,I used (hasura cloud)[https://hasura.io/cloud/]
@@ -48,7 +48,7 @@
 
 
    ##### Alternative deployement
-      - we can we ECS service for deploying the docker compose services directly
+   - we can use ECS service for deploying the docker compose services directly
 
 
 
