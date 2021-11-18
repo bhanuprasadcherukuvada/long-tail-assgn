@@ -11,9 +11,9 @@
 - You can check the hasura console at [http://localhost:8080](http://localhost:8080)
 <br>
 <br>
-- the application is seeded with initial data which is done with the help of migrations 
+- the application is seeded with initial data which is done with the help of migrations.
 - I have used ```hasura-cli``` to generate migrations.
--  [reference link](https://hasura.io/blog/moving-from-local-development-staging-production-with-hasura/) for seed migrations 
+- i used this [resource](https://hasura.io/blog/moving-from-local-development-staging-production-with-hasura/) for seed migrations 
 
  ![alt]('/../assets/Screenshot%20(17).png)
  ![alt]('/../assets/Screenshot%20(18).png)
